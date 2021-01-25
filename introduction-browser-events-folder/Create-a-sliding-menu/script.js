@@ -1,12 +1,8 @@
-let headLine = document.getElementById("headline");
-let ul = document.getElementsByTagName("ul");
+let all = document.getElementById("all");
+let sweets = document.querySelector(".sweets");
 
-//document.addEventListener("DOMContentLoaded", function() {
-  //  ul.hidden = true;
-//});
-
-headLine.onclick = function() {
-    ul.hidden = true;
-}
+all.onclick = function() {
+  all.classList.toggle("open");
+};
 
 

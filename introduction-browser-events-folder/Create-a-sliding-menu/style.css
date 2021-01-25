@@ -1,0 +1,20 @@
+.sweets ul{
+    margin: 0;
+    padding-left: 10px;
+    display: none;
+    list-style: none;
+}
+.sweets #headline {
+    cursor: pointer;
+}
+.sweets #headline::before {
+    content: '▶ ';
+}
+
+.sweets.open #headline::before {
+    content: '▼ ';
+}
+
+.sweets.open ul{
+    display: block;
+}

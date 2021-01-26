@@ -1,5 +1,5 @@
 let contents = document.getElementById("contents");
-let link = document.getElementsByTagName("href");
+let link = document.getElementsByTagName("a");
 
 contents.onclick = function(event) {
 

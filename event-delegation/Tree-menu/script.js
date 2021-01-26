@@ -1,16 +1,18 @@
 let tree = document.getElementById("tree");
+let allLi = document.querySelectorAll("li");
+for (let li of allLi) {
+    let span = document.createElement("span");
+    li.append(span);
+    span.appendChild(span.nextSibling);
+}
 
-tree.onclick = function(event) {
-    let newTree = event.target.dataset.toggleId;
-    if(!newTree) {
-        return;
-    }
-    newTree = event.target.event.closest("ul");
-    if(newTree) {
-        newTree.hidden = !newTree.hidden;
-    }
-    newTree = event.target.event.closest("li");
-    if(newTree) {
-        newTree.hidden = !newTree.hidden;
-    }
-};
+tree.addEventListener("click", (event) => {
+        if (event.target.tagName !== "SPAN") {
+            return;
+        }
+        let select = event.target.parentNode.querySelector("ul");
+        if (!select) {
+            return;
+        }
+        select.hidden = !select.hidden;
+    });

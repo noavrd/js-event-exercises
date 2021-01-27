@@ -1,29 +1,26 @@
 let li = document.getElementsByTagName("li");
-let ul = document.getElementsByTagName("ul");
+let ul = document.getElementById("ul");
 
-li.onclick = function(event) {
-if (event.target.tagName !== "li") {
+ul.onclick = function(event) {
+if (event.target.tagName !== "LI") {
     return;
 }
 if(event.ctrlKey) {
-    list(event.target);
+    selectMoreThanOne(event.target);
 } else {
-    select(event.target);
+    selectFromList(event.target);
 }
 };
 
-ul.onmousedown = function() {
-    return false;
-};
-
-function select(li) {
+//a function that select only one li
+function selectFromList(select) {
     let sel = ul.querySelectorAll(".selected");
     for (let element of sel) {
-        element.classList.remove(".selected");
+        element.classList.remove("selected");
     }
-    li.classList.add(".selected");
+    select.classList.add("selected");
 }
 
-function list(li) {
-    li.classList.toggle(".selected");
+function selectMoreThanOne(str) {
+    str.classList.toggle("selected");
 }
